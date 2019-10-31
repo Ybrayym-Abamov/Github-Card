@@ -41,18 +41,18 @@ class App extends Component {
         <Card>
           <Image src={this.state.user.avatar_url} wrapped ui={false} />
         <Card.Content>
-      <Card.Header>Username = {this.state.user.login}</Card.Header>
+      <Card.Header>{this.state.user.login.split("-").join(' ')}</Card.Header>
       <Card.Meta>
         <span className='date'>Company = {this.state.user.company}</span>
       </Card.Meta>
       <Card.Description>
-        Bio = {this.state.user.bio}
+        My bio:<div>{this.state.user.bio}</div>
       </Card.Description>
     </Card.Content>
     <Card.Content extra>
-      <a>
+      <a href={this.state.user.followers_url}>
         <Icon name='user'/>
-        Followers = {this.state.user.followers}
+        {this.state.user.followers} people are following
       </a>
     </Card.Content>
           {/* // < div >
